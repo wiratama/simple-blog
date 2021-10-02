@@ -1,0 +1,24 @@
+type Navigation {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateNavigationInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateNavigationInput {
+  id: Int!
+}
+
+type Query {
+  navigation: [Navigation]!
+  navigation(id: Int!): Navigation
+}
+
+type Mutation {
+  createNavigation(createNavigationInput: CreateNavigationInput!): Navigation!
+  updateNavigation(updateNavigationInput: UpdateNavigationInput!): Navigation!
+  removeNavigation(id: Int!): Navigation
+}

@@ -1,0 +1,24 @@
+type Commet {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input CreateCommetInput {
+  # Example field (placeholder)
+  exampleField: Int
+}
+
+input UpdateCommetInput {
+  id: Int!
+}
+
+type Query {
+  commet: [Commet]!
+  commet(id: Int!): Commet
+}
+
+type Mutation {
+  createCommet(createCommetInput: CreateCommetInput!): Commet!
+  updateCommet(updateCommetInput: UpdateCommetInput!): Commet!
+  removeCommet(id: Int!): Commet
+}
