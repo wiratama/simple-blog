@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { GraphQLModule } from '@nestjs/graphql';
+import { DatabaseModule } from './database.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostModule } from './post/post.module';
@@ -11,8 +13,23 @@ import { CommetModule } from './commet/commet.module';
 import { SettingModule } from './setting/setting.module';
 import { NavigationModule } from './navigation/navigation.module';
 
+
 @Module({
-  imports: [PostModule, AuthModule, UsersModule, PostTypeModule, CategoryModule, TagsModule, CommetModule, SettingModule, NavigationModule],
+  imports: [
+    GraphQLModule.forRoot({
+      debug: true,
+      playground: true,
+    }),
+    PostModule, 
+    AuthModule, 
+    UsersModule, 
+    PostTypeModule, 
+    CategoryModule, 
+    TagsModule, 
+    CommetModule, 
+    SettingModule, 
+    NavigationModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
